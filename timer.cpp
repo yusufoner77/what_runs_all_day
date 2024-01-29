@@ -4,17 +4,20 @@
 #include "timer.hpp"
 using namespace std;
 
+// I was not able to get this lab to run correctly, but here is as far as I got.
+
+
 Timer timer;
 
 bool Timer::get_is_running() {
     return is_running;
 }
 
-time_t Timer::get_time_elapsed() {
+int Timer::get_time_elapsed() {
     return time_elapsed;
 }
 
-time_t Timer::start_timer() {
+int Timer::start_timer() {
     is_running = true;
     time_t start_time;
     time(&start_time);
@@ -22,7 +25,7 @@ time_t Timer::start_timer() {
     return start_time;
 }
 
-time_t Timer::stop_timer() {
+int Timer::stop_timer() {
     is_running = false;
     time_t end_time;
     time(&end_time);
@@ -30,7 +33,7 @@ time_t Timer::stop_timer() {
     return end_time;
 }
 
-time_t Timer::elapsed() {
+int Timer::elapsed() {
     time_elapsed = end_time - start_time;
 
     return time_elapsed;
