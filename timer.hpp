@@ -9,9 +9,9 @@ class Timer {
     int time_elapsed;
 
 public:
-    int start_time;
-    int end_time;
-    bool get_is_running();
+    time_t start_time;
+    time_t end_time;
+    void get_is_running();
     int get_time_elapsed();
     int start_timer();
     int stop_timer();    

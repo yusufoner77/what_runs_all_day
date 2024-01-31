@@ -12,15 +12,17 @@ int main() {
 
 Timer timer;
 
-cout << "start time is " << timer.start_timer() << endl;
-cout << "timer is " << timer.get_is_running() << endl;
+timer.get_is_running();
 
-sleep(10);
+cout << "start time is " << timer.start_timer() << endl;
+timer.get_is_running();
+
+sleep(5);
 
 cout << "stop time is " << timer.stop_timer() << endl;
-cout << "timer is " << timer.get_is_running() << endl;
+timer.get_is_running();
 
-// cout << "start time was " << timer.start_time << endl;
+timer.elapsed();
 cout << "That took " << timer.get_time_elapsed() << " seconds." << endl;
 
 }

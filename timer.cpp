@@ -9,8 +9,14 @@ using namespace std;
 
 Timer timer;
 
-bool Timer::get_is_running() {
-    return is_running;
+
+void Timer::get_is_running() {
+    if (is_running == true) {
+        cout << "The timer is running!" << endl;
+    }
+    else {
+        cout << "The timer is stopped!" << endl;
+    }
 }
 
 int Timer::get_time_elapsed() {
@@ -19,15 +25,12 @@ int Timer::get_time_elapsed() {
 
 int Timer::start_timer() {
     is_running = true;
-    time_t start_time;
     time(&start_time);
-
     return start_time;
 }
 
 int Timer::stop_timer() {
     is_running = false;
-    time_t end_time;
     time(&end_time);
 
     return end_time;
