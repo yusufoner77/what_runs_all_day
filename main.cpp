@@ -5,24 +5,45 @@
 using namespace std;
 
 
-// I was not able to get this lab to run correctly, but here is as far as I got.
-
-
 int main() {
 
 Timer timer;
 
-timer.get_is_running();
+timer.start_time = 0;
+timer.end_time = 0;
 
-cout << "start time is " << timer.start_timer() << endl;
+// This will test if we try to run elapsed on a timer that hasn't started yet.
+cout << "Let's try to determine time elapsed, even though the timer hasn't started..." << endl;
+timer.elapsed();
+cout << endl << endl;
+
+
+// This will test the code if it runs as intended
 timer.get_is_running();
+cout << endl;
+
+timer.start_timer();
+timer.get_is_running();
+cout << endl;
 
 sleep(5);
 
-cout << "stop time is " << timer.stop_timer() << endl;
+timer.stop_timer();
 timer.get_is_running();
+cout << endl;
 
 timer.elapsed();
-cout << "That took " << timer.get_time_elapsed() << " seconds." << endl;
+cout << "That took " << timer.get_time_elapsed() << " seconds." << endl << endl;
+
+
+//This will test if you try to stop a timer that hasn't started
+cout << endl;
+timer.get_is_running();
+cout << endl;
+
+cout << "Now if we try to stop the timer..." << endl;
+
+timer.stop_timer();
+
 
 }

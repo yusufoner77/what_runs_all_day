@@ -4,11 +4,7 @@
 #include "timer.hpp"
 using namespace std;
 
-// I was not able to get this lab to run correctly, but here is as far as I got.
-
-
 Timer timer;
-
 
 void Timer::get_is_running() {
     if (is_running == true) {
@@ -23,23 +19,37 @@ int Timer::get_time_elapsed() {
     return time_elapsed;
 }
 
-int Timer::start_timer() {
+void Timer::start_timer() {
     is_running = true;
     time(&start_time);
-    return start_time;
+    cout << "start time is " << start_time << endl;
 }
 
-int Timer::stop_timer() {
+void Timer::stop_timer() {
+    if(is_running == false) {
+        cout << "The timer is not running yet. Please start a timer before trying to stop it." << endl;
+        exit(0); 
+    }
     is_running = false;
     time(&end_time);
 
-    return end_time;
+    cout << "stop time is " << end_time << endl;
 }
 
-int Timer::elapsed() {
+void Timer::elapsed() {
+
+    if(start_time == 0) {
+        cout << "Cannot calculate time elapsed until you have started a timer" << endl;
+        return;
+    }
+
+    if(end_time == 0) {
+        cout << "Cannot calculate time elapsed until you have stopped the timer" << endl;
+        return;
+    }
+
     time_elapsed = end_time - start_time;
 
-    return time_elapsed;
 }
 
 
