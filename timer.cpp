@@ -52,6 +52,32 @@ void Timer::elapsed() {
 
 }
 
+void Timer::pretty_print() {
+    if (get_time_elapsed() == 0) {
+        cout << "No time has passed" << endl;
+    }
+
+    if (get_time_elapsed() > 0 && get_time_elapsed() < 60) {
+        cout << get_time_elapsed() << " seconds have passed." << endl;
+    }
+
+    if (get_time_elapsed() % 60 == 0 && get_time_elapsed() >= 60 && get_time_elapsed() < 3600) {
+        cout << get_time_elapsed() / 60 << " minutes has passed." << endl;
+    }
+
+    if (get_time_elapsed() % 60 != 0 && get_time_elapsed() > 60 && get_time_elapsed() < 3600) {
+        cout << get_time_elapsed() / 60 << " minutes and " << get_time_elapsed() % 60 << " seconds have passed." << endl;
+    }
+
+    if (get_time_elapsed() % 3600 == 0 && get_time_elapsed() >= 3600) {
+        cout << get_time_elapsed() / 3600 << " hours has passed." << endl;
+    }
+
+    if (get_time_elapsed() % 3600 != 0 && get_time_elapsed() > 3600) {
+        cout << get_time_elapsed() / 3600 << " hours, " << (get_time_elapsed() % 3600) / 60 << " minutes, and " << (get_time_elapsed() % 3600) % 60 << " seconds have passed." << endl;
+    }
+}
+
 
 
 

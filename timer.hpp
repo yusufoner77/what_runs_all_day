@@ -13,6 +13,7 @@ public:
     void start_timer();
     void stop_timer();    
     void elapsed();
+    void pretty_print();
 
     Timer(){
         is_running = 0;

@@ -33,7 +33,8 @@ timer.get_is_running();
 cout << endl;
 
 timer.elapsed();
-cout << "That took " << timer.get_time_elapsed() << " seconds." << endl << endl;
+// cout << "That took " << timer.get_time_elapsed() << " seconds." << endl << endl;
+timer.pretty_print();
 
 
 //This will test if you try to stop a timer that hasn't started
